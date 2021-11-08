@@ -1,0 +1,172 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: #121619;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar .leftSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.navbar img {
+  width:70px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+
+.logo{
+  filter: invert(100%);
+}
+
+.logo:hover{
+  filter: invert(50%) saturate(100%) hue-rotate(190deg) sepia(100%);
+  transition: filter 0.5s linear;
+}
+
+.navbar .rightSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+}
+
+.navbar .rightSide .reorder {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .login_button {
+  color: #121619;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  justify-content: center;
+  background-color: white;
+  height: 40px;
+  width: 90px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar .login_button:hover, .navbar .login_button:focus{
+  background-color: #a3d0eb;
+  transition: background-color 2s ease-out;
+}
+
+.navbar .rightSide svg {
+  font-size: 40px;
+}
+
+.navbar #open {
+  padding-left: 0px;
+}
+
+.navbar #open .hiddenLinks {
+  display: inherit;
+}
+
+.navbar #close .hiddenLinks {
+  display: none;
+}
+
+.navbar #open a {
+  width: 70px;
+  margin: 5px;
+}
+
+/*categories*/
+.navbar .categories {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar #close a {
+  display: none;
+}
+
+.navbar #open a {
+  display: table-row;
+}
+
+.hiddenCategories {
+  display: none;
+  position: absolute;
+  background-color: rgba(19, 21, 26, 0.9);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.hiddenCategories a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.hiddenCategories a:hover {
+  background-color: #ddd;
+}
+
+.categories:hover .hiddenCategories {
+  display: block;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .navbar .leftSide, .categories p {
+    padding-left: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar .rightSide a, .categories p, .login_button{
+    display: none;
+  }
+
+  .navbar .rightSide {
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  .navbar .rightSide .reorder {
+    display: inherit;
+  }
+
+  .navbar .categories {
+    margin: auto;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar .rightSide .reorder {
+    display: none;
+  }
+
+  .navbar .hiddenLinks, .navbar #open .hiddenLinks {
+    display: none;
+  }
+}
