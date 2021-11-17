@@ -5,11 +5,13 @@ import "../styles/Navbar.css";
 import { MdReorder as ReorderIcon, MdOutlineMoreHoriz, MdTravelExplore, MdRestaurantMenu, MdHotel} from 'react-icons/md';
 import { GiCruiser } from 'react-icons/gi';
 import { FaRoad, FaHome } from 'react-icons/fa';
+import Login from './Login';
 
 function NavBar() {
   //openLinks is true (id=open) then show leftside otherwise not
   const [openLinks, setOpenLinks] = useState(false);
   const [openCategories, setCategories] = useState(false);
+  const [openLogin, setLogin] = useState(false);
 
   const toggleNavBar = () => {
     setOpenLinks(!openLinks)
@@ -18,8 +20,13 @@ function NavBar() {
   const toggleCategories = () => {
     setCategories(!openCategories)
   }
+
+  const toggleLogin = () => {
+    setLogin(!openLogin)
+  }
   return (
     <div className="navbar">
+      <Login id={openLogin ? "openLogin" : "closeLogin"} fct={toggleLogin}/>
       <Link to="/" className="logo" ><img src={Logo} alt="paperplane_logo"/></Link>
       <div className="leftSide" id={openLinks ? "open" : "close"}>
         <div className="hiddenLinks">
@@ -51,7 +58,7 @@ function NavBar() {
         </div>
         </div>
         <Link to="/contact"> Contact </Link>
-        <button className="login_button">Log in</button>
+        <button className="login_button" onClick={toggleLogin}>Log in</button>
         <button className="reorder">
         <ReorderIcon onClick={toggleNavBar}/>
         </button>
