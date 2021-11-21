@@ -10,9 +10,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//const plekkenService = require('./service/plekken');
-
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
