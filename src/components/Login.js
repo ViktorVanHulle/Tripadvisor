@@ -21,7 +21,7 @@ function Login({ id, fct }) {
         <button className="btn">Sign in</button>
       </div>
       <div className="form-element">
-        <a href="#">Forgot password?</a>
+        <a href="#">Forgot password? Yes</a>
       </div>
     </div>
     </div>
